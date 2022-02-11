@@ -7,8 +7,6 @@ const input = document.querySelector("input");
 const ADD_TODO = "ADD_TODO";
 const DELETE_TODO = "DELETE_TODO";
 
-const store = createStore(reducer);
-
 const addToDo = (text) => {
   return {
     type: ADD_TODO,
@@ -32,6 +30,7 @@ const reducer = (state = [], action) => {
       return state;
   }
 };
+const store = createStore(reducer);
 
 const dispatchDeleteToDo = (e) => {
   const id = parseInt(e.target.parentNode.id);
